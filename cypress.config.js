@@ -7,7 +7,18 @@ module.exports = defineConfig({
     },
     chromeWebSecurity: false,
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
-    experimentalStudio: true
+    experimentalStudio: true,
+    reporter: 'cypress-multi-reporters',
+    reporterOptions: {
+      reporterEnabled: 'mochawesome',
+      mochawesomeReporterOptions: {
+        reportDir: 'cypress/reports/mochawesome',
+        overwrite: false,
+        html: true,
+        json: true,
+        timestamp: 'mmddyyyy_HHMMss'
+      }
+    }
   },
   /*env:{
     endpoint:{
