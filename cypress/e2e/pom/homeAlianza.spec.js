@@ -9,7 +9,7 @@ describe('POM Implementation', () => {
         cy.session('login', () => {
           cy.visit('https://v2.psicoalianza.com/');
           homeAlianza.enterUsername('14251103');
-          homeAlianza.enterPassword('123456789$$');
+          homeAlianza.enterPassword('123456789$');
           homeAlianza.clickLogin();
           cy.url().should('not.include', '/login');
         });
