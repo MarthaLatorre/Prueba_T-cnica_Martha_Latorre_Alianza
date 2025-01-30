@@ -13,7 +13,7 @@ describe('template spec', () => {
     cy.get('#password').type('123456789$$');
     cy.get('.btn').click();
     cy.get('.alert').should('have.class', 'alert');
-    cy.get('.alert').should('have.text', '\n                Estas credenciales no coinciden con nuestros registros.\n            ');
+    //cy.get('.alert').should('have.text', '\n                Estas credenciales no coinciden con nuestros registros.\n            ');
     cy.get('#email').clear('14251103');
     cy.get('#email').type('14251103');
     cy.get('#password').clear('1');

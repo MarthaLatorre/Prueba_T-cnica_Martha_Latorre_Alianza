@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-30T03:04:56.905Z",
+    "end": "2025-01-30T03:05:21.885Z",
+    "duration": 24980,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fb2dd429-b186-43d1-b1bc-ba50f4c07097",
+      "title": "",
+      "fullFile": "cypress\\e2e\\pom\\homeAlianza.spec.js",
+      "file": "cypress\\e2e\\pom\\homeAlianza.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6b3e059-d5e8-4a75-bb3e-3e4d79e4bbb8",
+          "title": "POM Implementation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Acces to soporte page",
+              "fullTitle": "POM Implementation Acces to soporte page",
+              "timedOut": null,
+              "duration": 22773,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*homeAlianza.enterUsername('14251103');\nhomeAlianza.enterPassword('123456789$$');\nhomeAlianza.clickLogin();\n*/\n//Ingreso a sección Soprte de Clientes\n_soportesAlianza.default.clickSoporte();\ncy.url().should('include', '/soportes'); //Verificación del Endpoint\n_soportesAlianza.default.elements.titleSubmenu().should('have.text', 'Soportes de clientes');\n_soportesAlianza.default.elements.mostrarColumnas().should('be.visible');\n// Desplegar checklist\n_soportesAlianza.default.clickMostrar();\ncy.wait(1000);\n_soportesAlianza.default.changeCheckbox('columna-id');\n_soportesAlianza.default.changeCheckbox('columna-categoria');\n_soportesAlianza.default.changeCheckbox('columna-canal-receptor');\n_soportesAlianza.default.changeCheckbox('columna-prioridad');\n// Alternar el estado del checkbox \"Prioridad\"\n_soportesAlianza.default.changeCheckbox('columna-prioridad');\ncy.wait(3000);\n// Sale del checklist\n_soportesAlianza.default.clickMostrar();\n// Verificar el registro Pendiente\n_soportesAlianza.default.elements.pendiente().should('have.text', 'Pendiente');\ncy.wait(1000);\n// Crear Soporte\n_crearSoporte.default.elements.addSoporte().contains('Crear soporte');\n_crearSoporte.default.elements.addSoporte().scrollIntoView().should('be.visible');\n_crearSoporte.default.clickAddSoporte();\n// Verifica card vacía\n_crearSoporte.default.elements.cardCliente().should('have.class', 'imagen-usuario-card');\n// Selecciona empresa\n_crearSoporte.default.clickEmpresa();\ncy.wait(3000);\n_crearSoporte.default.selectEmpresa();\n// Validar que cargó un cliente\ncy.wait(1000);\n_crearSoporte.default.elements.cardCliente().should('have.id', 'imagen_usuario-seleccionado');\n_crearSoporte.default.elements.cardCliente().should('have.class', 'imagen-usuario-card');\n//Validar campos y llenar\n_crearSoporte.default.elements.telfCliente().should('have.id', 'telefono_usuario');\n_crearSoporte.default.enterTelf('321415263');\ncy.wait(1000);\n_crearSoporte.default.elements.productCliente().should('have.id', 'select2-tipo_prueba_id-container');\n_crearSoporte.default.selectProducto();\ncy.wait(1000);\n_crearSoporte.default.elements.categCliente().should('have.id', 'select2-categoria_id-container');\n_crearSoporte.default.selectCategoria();\ncy.wait(1000);\n_crearSoporte.default.elements.canalCliente().should('have.id', 'select2-origen_id-container');\n_crearSoporte.default.selectCanal();\ncy.wait(1000);\n//\n/* ==== Generated with Cypress Studio ==== */\n/* ==== End Cypress Studio ==== */\n/* ==== Generated with Cypress Studio ==== */\n//cy.get('.ck-blurred').click();\n//cy.get('.ps-1 > .w-100').click();\n//cy.get('.alert > .col > .row > .col-12').should('have.text', '\\n                        Soporte creado correctamente\\n                    ');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "bfdbc355-bcba-4c1f-93bf-983d3e8b3243",
+              "parentUUID": "c6b3e059-d5e8-4a75-bb3e-3e4d79e4bbb8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bfdbc355-bcba-4c1f-93bf-983d3e8b3243"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22773,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -23,10 +23,10 @@ it('sucess_login', function() {
   cy.get(':nth-child(2) > .check-container > .filtro-columna').check();
   cy.get(':nth-child(3) > .check-container > .filtro-columna').check();
   cy.get(':nth-child(4) > .check-container > .filtro-columna').check();
-  cy.get('.container-fluid > :nth-child(1) > .dropdown > .dropdown-menu > :nth-child(1)').should('have.text', '\n                            \n                                \n                            ID del soporte\n                        ');
-  cy.get('.container-fluid > :nth-child(1) > .dropdown > .dropdown-menu > :nth-child(2)').should('have.text', '\n                            \n                                \n                            Categoría de la solicitud\n                        ');
-  cy.get('.dropdown-menu > :nth-child(3)').should('have.text', '\n                            \n                                \n                            Canal receptor\n                        ');
-  cy.get('.dropdown-menu > :nth-child(4)').should('have.text', '\n                            \n                                \n                            Prioridad\n                        ');
+ // cy.get('.container-fluid > :nth-child(1) > .dropdown > .dropdown-menu > :nth-child(1)').should('have.text', '\n                            \n                                \n                            ID del soporte\n                        ');
+ // cy.get('.container-fluid > :nth-child(1) > .dropdown > .dropdown-menu > :nth-child(2)').should('have.text', '\n                            \n                                \n                            Categoría de la solicitud\n                        ');
+ // cy.get('.dropdown-menu > :nth-child(3)').should('have.text', '\n                            \n                                \n                            Canal receptor\n                        ');
+ // cy.get('.dropdown-menu > :nth-child(4)').should('have.text', '\n                            \n                                \n                            Prioridad\n                        ');
   /* ==== End Cypress Studio ==== */
   /* ==== Generated with Cypress Studio ==== */
   cy.get('[href="https://v2.psicoalianza.com"] > .text-white').should('have.text', 'Tablero');

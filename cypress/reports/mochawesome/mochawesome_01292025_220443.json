@@ -1,0 +1,88 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-30T03:04:32.857Z",
+    "end": "2025-01-30T03:04:43.576Z",
+    "duration": 10719,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3d508032-bbcc-4b1b-b152-a4e3fbbd05f2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login_alianza.js",
+      "file": "cypress\\e2e\\login_alianza.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "sucess_login",
+          "fullTitle": "sucess_login",
+          "timedOut": null,
+          "duration": 8903,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://v2.psicoalianza.com/');\ncy.get('#email').clear('14251103');\ncy.get('#email').type('14251103');\ncy.get('#password').clear('1');\ncy.get('#password').type('123456789$$');\ncy.get('.btn').click();\ncy.get('[href=\"https://v2.psicoalianza.com/soportes\"] > .text-white').should('have.text', 'Soporte');\ncy.get('[href=\"https://v2.psicoalianza.com/soportes\"] > .text-white').click();\ncy.get('#sub-menus > .col-auto').should('have.text', 'Soportes de clientes');\ncy.get('.dropdown > .btn').should('be.visible');\ncy.get('[data-dt-column=\"9\"] > .dt-column-title').should('have.text', 'Estado');\ncy.get(':nth-child(1) > :nth-child(10) > .alert').should('have.text', 'Pendiente');\n/* ==== End Cypress Studio ==== */\n/* ==== Generated with Cypress Studio ==== */\ncy.get('[href=\"https://v2.psicoalianza.com/soportes\"] > .text-white').should('have.class', 'text-white');\n/* ==== End Cypress Studio ==== */\n/* ==== Generated with Cypress Studio ==== */\ncy.get('.dropdown > .btn').click();\ncy.get(':nth-child(1) > .check-container > .filtro-columna').check();\ncy.get(':nth-child(2) > .check-container > .filtro-columna').check();\ncy.get(':nth-child(3) > .check-container > .filtro-columna').check();\ncy.get(':nth-child(4) > .check-container > .filtro-columna').check();\ncy.get('.container-fluid > :nth-child(1) > .dropdown > .dropdown-menu > :nth-child(1)').should('have.text', '\\n                            \\n                                \\n                            ID del soporte\\n                        ');\ncy.get('.container-fluid > :nth-child(1) > .dropdown > .dropdown-menu > :nth-child(2)').should('have.text', '\\n                            \\n                                \\n                            Categoría de la solicitud\\n                        ');\ncy.get('.dropdown-menu > :nth-child(3)').should('have.text', '\\n                            \\n                                \\n                            Canal receptor\\n                        ');\ncy.get('.dropdown-menu > :nth-child(4)').should('have.text', '\\n                            \\n                                \\n                            Prioridad\\n                        ');\n/* ==== End Cypress Studio ==== */\n/* ==== Generated with Cypress Studio ==== */\ncy.get('[href=\"https://v2.psicoalianza.com\"] > .text-white').should('have.text', 'Tablero');\ncy.get('[href=\"https://v2.psicoalianza.com\"] > .text-white').click();\n/* ==== End Cypress Studio ==== */",
+          "err": {},
+          "uuid": "b33654e0-8fdd-44fd-8d23-61deea7ff121",
+          "parentUUID": "3d508032-bbcc-4b1b-b152-a4e3fbbd05f2",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "b33654e0-8fdd-44fd-8d23-61deea7ff121"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 8903,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
