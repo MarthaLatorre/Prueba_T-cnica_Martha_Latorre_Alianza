@@ -166,7 +166,7 @@ import soportesAlianza from "../../pageObjects/Alianza/soportesAlianza";
   });
 
 */
-/*
+
 describe('Pruebas del componente Select2', () => {
   
     beforeEach(() => {
@@ -266,5 +266,3 @@ describe('Pruebas del componente Select2', () => {
       cy.get('.select2-results__option').should('have.length', 1);
       cy.get('.select2-results__option').should('contain', 'Vocacional');
     });
-
-    */
