@@ -1,6 +1,7 @@
 import homeAlianza from "../../pageObjects/Alianza/homeAlianza";
 import soportesAlianza from "../../pageObjects/Alianza/soportesAlianza";
 import crearSoporte from "../../pageObjects/Alianza/crearSoporte";
+import filtros from "../../pageObjects/filtros";
 
 
 describe('POM Implementation', () => {
@@ -31,6 +32,8 @@ describe('POM Implementation', () => {
         soportesAlianza.elements.titleSubmenu().should('have.text', 'Soportes de clientes');
         soportesAlianza.elements.mostrarColumnas().should('be.visible');
 
+        
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Desplegar checklist
 
         soportesAlianza.clickMostrar();
@@ -49,7 +52,7 @@ describe('POM Implementation', () => {
         soportesAlianza.elements.pendiente().should('have.text', 'Pendiente');
 
         cy.wait(1000);
-
+      
         // Crear Soporte
         crearSoporte.elements.addSoporte().contains('Crear soporte');
         crearSoporte.elements.addSoporte().scrollIntoView().should('be.visible');
@@ -85,6 +88,24 @@ describe('POM Implementation', () => {
         cy.wait(1000);
         crearSoporte.elements.msgExitoso().should('be.visible');
         cy.wait(1000);
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //Validacion de filtros
+        filtros.clickFilter();
+        // Abrir el menú desplegable de Producto y sleescciona la opción "Organizacional"
+        filtros.clickProducto();
+        // Abrir el menú desplegable de Categoria y sleescciona la opción "Funcionamiento"
+        filtros.clickCategoria();
+        // Abrir el menú desplegable de Canal y sleescciona la opción "Whatssap"
+        filtros.clickCanal();
+        // Abrir el menú desplegable de Tipo de mensaje y sleescciona la opción "Leídos"
+        filtros.clickMensaje();
+        filtros.elements.tipoMensajeOptions().contains('Leídos').should('exist');
+        filtros.elements.tipoMensajeOptions().contains('No leídos').should('exist');
+        filtros.elements.tipoMensajeOptions().contains('Leídos').click();
+        filtros.elements.tipoMensajeList().should('contain.text', 'Leídos');
+        //Aplicar filtros
+        filtros.clickAplicar();
 
     });
 
