@@ -79,18 +79,13 @@ describe('POM Implementation', () => {
         crearSoporte.elements.canalCliente().should('have.id', 'select2-origen_id-container');
         crearSoporte.selectCanal();
         cy.wait(1000);
+        crearSoporte.editDescrip('Esta es la descripción del cliente');
+        cy.wait(1000);
+        crearSoporte.clickBtn();
+        cy.wait(1000);
+        crearSoporte.elements.msgExitoso().should('be.visible');
+        cy.wait(1000);
 
-        //
-
-
-        /* ==== Generated with Cypress Studio ==== */
-
-        /* ==== End Cypress Studio ==== */
-        /* ==== Generated with Cypress Studio ==== */
-        //cy.get('.ck-blurred').click();
-        //cy.get('.ps-1 > .w-100').click();
-        //cy.get('.alert > .col > .row > .col-12').should('have.text', '\n                        Soporte creado correctamente\n                    ');
-        /* ==== End Cypress Studio ==== */
     });
 
    /* it('Should change checkboxes', () => {
@@ -123,12 +118,12 @@ describe('POM Implementation', () => {
 
 
 
- /*   it('Should show error message', ()=> {
+   it('Unsuccessful login, show error message', ()=> {
         homeAlianza.enterUsername('usuarioincorrecto');
         homeAlianza.enterPassword('123456789$$');
         homeAlianza.clickLogin();
-        homeAlianza.elements.errorMessage().should('have.text', '\n                Estas credenciales no coinciden con nuestros registros.\n            ');
+        homeAlianza.elements.errorMessage().contains('Estas credenciales no coinciden con nuestros registros.');
     })
 
-*/
+
     })

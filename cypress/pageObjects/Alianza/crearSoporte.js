@@ -9,7 +9,9 @@ class crearSopote{
         productCliente: () => cy.get('#select2-tipo_prueba_id-container'),
         categCliente: () => cy.get('#select2-categoria_id-container'),
         canalCliente: ()=> cy.get('#select2-origen_id-container'),
-        description: () => cy.get('.ck-editor__main > .ck'),
+        description: () => cy.get('.ck.ck-content.ck-editor__editable'),
+        crearBtn: ()=> cy.get('.w-100.btn.btn-primary.justify-content-center'),
+        msgExitoso: () => cy.get('#contenedor-alert-toast > .alert'),
     }
     
     clickAddSoporte(){
@@ -42,6 +44,14 @@ class crearSopote{
 
     selectCanal(){
         this.elements.canalCliente().click();
+    }
+
+    editDescrip (descripcion){
+        this.elements.description().type(descripcion);
+    }
+
+    clickBtn (){
+        this.elements.crearBtn().click();
     }
 
     
